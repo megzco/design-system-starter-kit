@@ -97,7 +97,10 @@ gulp.task('default', ['build'], () => {
     server: 'dist'
   })
 
-  gulp.watch('src/styles/**/*.scss', ['styles'])
+  gulp.watch([
+    'src/styles/**/*.scss',
+    'node_modules/@salesforce-ux/design-system/scss/**/*.scss'
+  ], ['styles'])
   gulp.watch([
     'src/views/**/*.html',
     'src/views/data/*.json'
